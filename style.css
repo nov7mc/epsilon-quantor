@@ -1,110 +1,65 @@
-/* Reset + font */
+/* 讓整體頁面能夠正常滾動 */
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Helvetica Neue', sans-serif;
   height: 100%;
-  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
-  color: white;
   overflow-x: hidden;
-}
-
-/* Ocean + Waves */
-.ocean {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  background-color: #000; /* fallback 色 */
   position: relative;
+}
+
+/* 背景動畫 canvas 設為全螢幕且不影響內容 */
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
   height: 100vh;
-  width: 100%;
-  overflow: hidden;
 }
 
-.wave {
-  position: absolute;
-  bottom: 0;
-  width: 200%;
-  height: 100px;
-  background: url('https://cdn.pixabay.com/photo/2017/08/30/03/15/ocean-2697691_960_720.png') repeat-x;
-  background-size: contain;
-  animation: waveAnimation 10s linear infinite;
-  opacity: 0.4;
-  z-index: 1;
-}
-
-.wave2 {
-  animation: waveAnimation 15s linear infinite reverse;
-  opacity: 0.3;
-  bottom: 20px;
-}
-
-@keyframes waveAnimation {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* Content */
+/* 網站內容區域 */
 .content {
   position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 80px 20px 20px 20px;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  color: #00d4ff;
-}
-
-p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-/* Form Style */
-.form {
-  margin-top: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 20px;
+  z-index: 1;
+  max-width: 800px;
+  margin: 100px auto;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.6);
   border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
   backdrop-filter: blur(10px);
-  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  text-align: center;
 }
 
-.form label {
-  display: block;
-  margin-top: 10px;
+/* 標題 */
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+/* 副標與文字 */
+p {
+  font-size: 1.2em;
+  line-height: 1.6em;
+  margin-bottom: 20px;
+}
+
+/* 連結按鈕 */
+.join-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #00ffe0;
+  color: #000;
   font-weight: bold;
-  text-align: left;
-}
-
-.form input,
-.form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 4px;
   border: none;
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+  text-decoration: none;
+  transition: background 0.3s;
 }
 
-.form button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: #00d4ff;
-  color: black;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.form button:hover {
-  background: #00b0cc;
+.join-btn:hover {
+  background: #00bfa5;
 }
