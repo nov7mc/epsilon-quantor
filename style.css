@@ -1,71 +1,113 @@
-
-body, html {
+/* Reset 基本樣式 */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
     height: 100%;
-    font-family: 'Segoe UI', sans-serif;
-    overflow: hidden;
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+    color: #003366;
+    line-height: 1.6;
 }
 
+/* 海洋動畫背景容器 */
 .ocean {
-    height: 100vh;
-    width: 100vw;
-    background: linear-gradient(to bottom, #001a33, #002240);
     position: relative;
+    height: 100%;
     overflow: hidden;
+    background: linear-gradient(to bottom, #cfefff 0%, #ffffff 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 60px;
+    padding-bottom: 80px;
 }
 
+/* 波浪動畫 */
 .wave {
-    background: url('https://i.imgur.com/dYOjWkD.gif') repeat-x;
     position: absolute;
-    bottom: 0;
+    top: 0;
+    left: 0;
     width: 200%;
     height: 100%;
-    background-size: cover;
-    animation: animateWave 20s linear infinite;
-    opacity: 0.35;
+    background: url('https://www.transparenttextures.com/patterns/waves.png') repeat-x;
+    opacity: 0.1;
+    animation: waveAnimation 60s linear infinite;
 }
 
-@keyframes animateWave {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+@keyframes waveAnimation {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
+/* 主要內容區 */
 .content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    max-width: 800px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 900px;
+    width: 90%;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    z-index: 1;
 }
 
+/* 標題與段落 */
 h1 {
-    font-size: 3rem;
-    letter-spacing: 2px;
-    margin-bottom: 1rem;
+    font-size: 2.8rem;
+    color: #007acc;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    text-align: center;
 }
 
+/* 加入按鈕樣式（可改成表單連結按鈕） */
 .join-btn {
     display: inline-block;
-    margin-top: 1.5rem;
-    padding: 0.75rem 1.5rem;
-    font-size: 1.1rem;
+    margin-top: 25px;
+    padding: 12px 24px;
+    background: #007acc;
     color: white;
-    background-color: rgba(0, 123, 255, 0.8);
-    border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    text-align: center;
 }
 
 .join-btn:hover {
-    background-color: rgba(0, 123, 255, 1);
+    background: #005f99;
+}
+
+/* 表單 iframe 樣式 */
+iframe {
+    margin-top: 30px;
+    width: 100%;
+    height: 800px;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .content {
+        padding: 24px;
+    }
+
+    iframe {
+        height: 600px;
+    }
 }
