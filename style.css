@@ -16,8 +16,8 @@ body {
     background-size: cover;
     color: #ffffff;
     text-align: center;
-    padding: 0;
-    position: relative;
+    padding: 80px 20px;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* ✅ 遮罩層，增加文字可讀性 */
@@ -33,24 +33,25 @@ body::before {
 
 /* ✅ 包住主要內容，並讓內容置中顯示 */
 .content {
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 40px;
-    border-radius: 12px;
-    max-width: 800px;
+    max-width: 720px;
     margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 60px 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 
 h1 {
-    font-size: 48px;
-    margin-bottom: 24px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
 p {
+    font-size: 1.2rem;
+    line-height: 1.8;
     margin-bottom: 20px;
-    font-size: 18px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 .form-button {
