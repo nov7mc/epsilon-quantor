@@ -8,73 +8,14 @@ html, body {
     height: 100%;
     width: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    overflow-y: auto;
 }
 
+/* ✅ 加上這段就會顯示整頁背景圖 wave2.png */
 body {
     background: url('wave2.png') no-repeat center center fixed;
     background-size: cover;
-    color: #fff;
+    color: #ffffff;
     text-align: center;
     padding: 80px 20px;
-    margin: 0;
-}
-
-
-.ocean {
-    position: relative;
-    min-height: 100vh;
-    background: url('wave2.png') repeat-x;
-    background-size: cover;
-    animation: waveMove 10s linear infinite;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-bottom: 120px;
-}
-
-@keyframes waveMove {
-    0% { background-position-x: 0; }
-    100% { background-position-x: 1000px; }
-}
-
-.content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    backdrop-filter: blur(5px);
-}
-
-h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    color: #fff;
-}
-
-p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    color: #f0f0f0;
-}
-
-.form-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 24px;
-    font-size: 18px;
-    background-color: #ffffff;
-    color: #333;
-    border-radius: 8px;
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
-}
-
-.form-button:hover {
-    background-color: #f0f0f0;
-    transform: scale(1.05);
+    overflow-y: auto; /* 確保可以滾動 */
 }
