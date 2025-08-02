@@ -1,113 +1,110 @@
-/* Reset 基本樣式 */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Reset + font */
 body, html {
-    height: 100%;
-    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
-    background: linear-gradient(to bottom, #e0f7fa, #ffffff);
-    color: #003366;
-    line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  height: 100%;
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+  color: white;
+  overflow-x: hidden;
 }
 
-/* 海洋動畫背景容器 */
+/* Ocean + Waves */
 .ocean {
-    position: relative;
-    height: 100%;
-    overflow: hidden;
-    background: linear-gradient(to bottom, #cfefff 0%, #ffffff 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 60px;
-    padding-bottom: 80px;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
 }
 
-/* 波浪動畫 */
 .wave {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    height: 100%;
-    background: url('https://www.transparenttextures.com/patterns/waves.png') repeat-x;
-    opacity: 0.1;
-    animation: waveAnimation 60s linear infinite;
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 100px;
+  background: url('https://cdn.pixabay.com/photo/2017/08/30/03/15/ocean-2697691_960_720.png') repeat-x;
+  background-size: contain;
+  animation: waveAnimation 10s linear infinite;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.wave2 {
+  animation: waveAnimation 15s linear infinite reverse;
+  opacity: 0.3;
+  bottom: 20px;
 }
 
 @keyframes waveAnimation {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-/* 主要內容區 */
+/* Content */
 .content {
-    position: relative;
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 20px;
-    padding: 40px;
-    max-width: 900px;
-    width: 90%;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-    z-index: 1;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 80px 20px 20px 20px;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-/* 標題與段落 */
 h1 {
-    font-size: 2.8rem;
-    color: #007acc;
-    margin-bottom: 20px;
-    text-align: center;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #00d4ff;
 }
 
 p {
-    font-size: 1.1rem;
-    margin-bottom: 12px;
-    text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
-/* 加入按鈕樣式（可改成表單連結按鈕） */
-.join-btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 12px 24px;
-    background: #007acc;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background 0.3s ease;
-    text-align: center;
+/* Form Style */
+.form {
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 
-.join-btn:hover {
-    background: #005f99;
+.form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: left;
 }
 
-/* 表單 iframe 樣式 */
-iframe {
-    margin-top: 30px;
-    width: 100%;
-    height: 800px;
-    border: none;
-    border-radius: 16px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
 }
 
-/* 響應式調整 */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
+.form button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #00d4ff;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
 
-    .content {
-        padding: 24px;
-    }
-
-    iframe {
-        height: 600px;
-    }
+.form button:hover {
+  background: #00b0cc;
 }
