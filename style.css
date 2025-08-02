@@ -1,0 +1,71 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+}
+
+.ocean {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to bottom, #001a33, #002240);
+    position: relative;
+    overflow: hidden;
+}
+
+.wave {
+    background: url('https://i.imgur.com/dYOjWkD.gif') repeat-x;
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    height: 100%;
+    background-size: cover;
+    animation: animateWave 20s linear infinite;
+    opacity: 0.35;
+}
+
+@keyframes animateWave {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    max-width: 800px;
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.join-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    color: white;
+    background-color: rgba(0, 123, 255, 0.8);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.join-btn:hover {
+    background-color: rgba(0, 123, 255, 1);
+}
